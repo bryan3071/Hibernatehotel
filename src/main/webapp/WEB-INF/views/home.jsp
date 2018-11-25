@@ -24,7 +24,10 @@
   <option value="Nashville">Nashville</option>
   <option value="Detroit">Detroit</option>
   
+  
 </select>
+
+<button>Submit</button>
 	</form>
 	
 	
