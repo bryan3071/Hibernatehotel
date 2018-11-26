@@ -14,7 +14,7 @@ public class HotelController {
 	
 	@Autowired
 	//private MenuItemDao menuItemDao;
-	private HotelDao HotelDao;
+	public HotelDao HotelDao;
 
 	@RequestMapping("/")
 	public ModelAndView index() {
@@ -27,6 +27,15 @@ public class HotelController {
 		ModelAndView mv = new ModelAndView ("results");
 		return mv;
 	}	
+	
+	@RequestMapping("/cityresults")
+	public ModelAndView showCity(@RequestParam("city")String city) {
+		ModelAndView mv = new ModelAndView ("results");
+		mv.addObject("results", HotelDao.findByCity(city));
+		System.out.println(HotelDao.findByCity(city));
+		return mv;
+		
+	}
 		
 		
 		

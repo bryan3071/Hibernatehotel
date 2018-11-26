@@ -16,6 +16,14 @@
  
 <form action="/">
 <table>
+<thead>
+			<tr>
+				<th>Hotel Id</th>
+				<th>City</th>
+				<th>Name</th>
+				<th>Price Per Night</th>
+			</tr>
+		</thead>
 <c:if test="${ not empty list }">
 					<thead>
 						<tr>
@@ -23,16 +31,14 @@
 							<th>Price</th>
 						</tr>
 					</thead>
-					<c:forEach var="hotel" items="${ list }">
+					<c:forEach var="hotel" items="${ results }">
 						<tr>
 							<td>${ hotel.name }</td>
 							<td>$ ${ hotel.price }</td>
 						</tr>
 					</c:forEach>
 					</c:if>
-					<c:if test="${ empty list }">
-						<h4>Your search did not find any results!</h4>
-					</c:if>
+					
 				</table>
 				 </form>
 				</header>
