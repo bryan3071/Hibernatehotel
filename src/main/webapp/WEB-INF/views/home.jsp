@@ -14,15 +14,11 @@
 <p> Please select a city from the menu and we will show you the details from one of our excellent hotels</p>
 
 <form action ="/results" method:"post">
-		Hotel City: <select name="hotel_city">
-  <option value="select a value">Select A Value</option>
-  <option value="Las Vegas">Las Vegas</option>
-  <option value="Boston">Boston</option>
-  <option value="Edgewater">Edgewater</option>
-  <option value="Arlington">Arlington</option>
-  <option value="San Francisco">San Francisco</option>
-  <option value="Nashville">Nashville</option>
-  <option value="Detroit">Detroit</option>
+		Hotel City: <select name="city">
+  <c:forEach var = "city" items="${cities }">
+  <option value="${city }">${city }</option>
+  
+  </c:forEach>
   
   
 </select>

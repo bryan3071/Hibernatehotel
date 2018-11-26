@@ -1,6 +1,8 @@
 package co.grandcircus.Hotel;
 
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -21,9 +23,15 @@ public class HotelDao {
 	public Hotel findById (Long id) {
 		return em.find(Hotel.class, id);
 	}
-	public Object findByCity(String city) {
-		return em.createQuery(" FROM hotel_listing where city = city order by pricepernight", Hotel.class)
+	public List<Hotel> findByCity(String city) {
+		return em.createQuery(" FROM Hotel where city = :city", Hotel.class)
 		.setParameter("city", city)
 		.getResultList();
+	}
+	
+	public Set<String> findAllCities() {
+		List<String> cityList = em.createQuery("Select Distinct city from Hotel", String.class)
+				.getResultList();
+		return new TreeSet<>(cityList);
 	}
 }

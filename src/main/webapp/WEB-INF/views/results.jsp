@@ -11,10 +11,10 @@
 <body>
 <header >
 <p> Hello </p>
-
+<p>${city }</p>
 <p> Here are the hotels and prices for the city selected</p>
  
-<form action="/">
+
 <table>
 <thead>
 			<tr>
@@ -24,7 +24,7 @@
 				<th>Price Per Night</th>
 			</tr>
 		</thead>
-<c:if test="${ not empty list }">
+
 					<thead>
 						<tr>
 							<th>Name</th>
@@ -34,13 +34,13 @@
 					<c:forEach var="hotel" items="${ results }">
 						<tr>
 							<td>${ hotel.name }</td>
-							<td>$ ${ hotel.price }</td>
+							<td>$ ${ hotel.pricepernight }</td>
 						</tr>
 					</c:forEach>
-					</c:if>
+					
 					
 				</table>
-				 </form>
+				 
 				</header>
 
 </body>
