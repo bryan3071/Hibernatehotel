@@ -9,18 +9,18 @@
 </head>
 
 <body>
-<header class="w3-display-container w3-content" style="max-width:1500px;">
+<header >
 <p> Hello </p>
 
 <p> Here are the hotels and prices for the city selected</p>
- <h2><i class="fa fa-bed w3-margin-right"></i>Hotels<c:if test="${ not empty city }"> in ${ city }</c:if></h2><h6><i>(under $${ max })</i></h6>
+ 
 <form action="/">
-<table class="table table-striped table-dark">
+<table>
 <c:if test="${ not empty list }">
-					<thead class="thead-dark">
+					<thead>
 						<tr>
-							<th scope="col">Name</th>
-							<th scope="col">Price</th>
+							<th>Name</th>
+							<th>Price</th>
 						</tr>
 					</thead>
 					<c:forEach var="hotel" items="${ list }">
@@ -31,7 +31,7 @@
 					</c:forEach>
 					</c:if>
 					<c:if test="${ empty list }">
-						<h4>Your search parameters didn't turn up any results!</h4>
+						<h4>Your search did not find any results!</h4>
 					</c:if>
 				</table>
 				 </form>

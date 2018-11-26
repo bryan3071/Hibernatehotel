@@ -13,7 +13,7 @@
 
 <p> Please select a city from the menu and we will show you the details from one of our excellent hotels</p>
 
-<form>
+<form action ="/results">
 		Hotel City: <select name="hotel_city">
   <option value="select a value">Select A Value</option>
   <option value="Las Vegas">Las Vegas</option>

@@ -22,7 +22,11 @@ public class HotelController {
 		return mv;
 	}
 		
-		
+	@RequestMapping("/results")
+	public ModelAndView showResults() {
+		ModelAndView mv = new ModelAndView ("results");
+		return mv;
+	}	
 		
 		
 		
